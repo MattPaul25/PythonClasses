@@ -5,51 +5,53 @@ def main():
     print("starting")
 
 
-class Car(object):
+class Car(object): 
     def __init__(self, carName):
-        Car.name = carName
-        Car.Park = True
-        Car.On = False
-        Car.speed = 0
-        print("your new car is a {0}.".format(Car.name))
+        self._name = carName #using self is a way to make a private field that can be accessed    
+        self._Park = True     # from the outside using a getter or setter internal method
+        self._On = False
+        self._speed = 0
+        print("your new car is a {0}.".format(self._name))
 
     def turn_on(self):
-        if (not Car.On):
-            Car.On = True;
+        if (not self._On):
+            self._On = True;
             print("vroom, vroom")
         else:
             print("Car is already on")
 
     def turn_off(self):        
-        if (Car.On and Car.speed == 0):
-            Car.On = False;
+        if (self._On and self._speed == 0):
+            self._On = False;
             print("perperperpderp")
-        elif not Car.On:
+        elif not self._On:
             print("Car is already off")
-        elif(Car.speed > 0):
+        elif(self._speed > 0):
             print("can't turn off: Car is moving")
 
     def accelerate(self, amount = 1):
-        if Car.On:
-            Car.speed += amount
-            status = " speeding up: {0} is going {1} mph faster: current speed {2} ".format(Car.name, amount,  Car.speed)
+        if self._On:
+            self._speed += amount
+            status = " speeding up: {0} is going {1} mph faster: current speed {2} ".format(self._name, amount,  self._speed)
             print(status)
-        elif not Car.On:
+        elif not self._On:
             status = "cant speed up: car is off"
             print(status)
 
     def decelerate(self, amount = 1):
-         if Car.On:
-            Car.speed -= amount
-            status = " slowing down: {0} is going {1} mph slower: current speed {2} ".format( Car.name, amount, Car.speed)
+         if self._On:
+            self._speed -= amount
+            status = " slowing down: {0} is going {1} mph slower: current speed {2} ".format( self._name, amount, self._speed)
             print(status)
-         elif not Car.On:
+         elif not self._On:
             status = "cant slow down: car is off"
             print(status)
 
     def HandBreak(self):
-        Car.Speed -= Car.speed
-        Car.Park = True
+        self._speed -= self._speed
+        self._Park = True
+
+
 
 
 main()
@@ -58,3 +60,6 @@ C.turn_on()
 C.accelerate(56)
 C.decelerate(20)
 C.turn_off()
+C.HandBreak()
+C.turn_off()
+print(C._name, C._Park, C._speed)

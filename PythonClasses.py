@@ -1,11 +1,19 @@
 
-#all variables are first class objects 
+import Demo
 
 def main():
     print("starting")
+    C = Car("ferrari")
+    C.turn_on()
+    C.accelerate(56)
+    C.decelerate(20)
+    C.turn_off()
+    C.HandBreak()
+    C.turn_off()    
+    print(C._name, C._Park, C._speed)
 
 
-class Car(object): 
+class Car(object): #everything derives from object! Class(object) implies inheritance of object but do not need it
     def __init__(self, carName):
         self._name = carName #using self is a way to make a private field that can be accessed    
         self._Park = True     # from the outside using a getter or setter internal method
@@ -50,16 +58,21 @@ class Car(object):
     def HandBreak(self):
         self._speed -= self._speed
         self._Park = True
+class Test(object):
+    def __init__(self, value):
+        self.value = value
 
 
+Demo.main()
+#a = Test(123) 
+a = Test('test') #a is the object that is required
 
+#print(a.value + 2)
+print(a.value.capitalize())
 
 main()
-C = Car("ferrari")
-C.turn_on()
-C.accelerate(56)
-C.decelerate(20)
-C.turn_off()
-C.HandBreak()
-C.turn_off()
-print(C._name, C._Park, C._speed)
+
+
+
+
+

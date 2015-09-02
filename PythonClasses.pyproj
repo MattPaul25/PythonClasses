@@ -22,7 +22,22 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="anon_object.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Demo.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Document.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lambdas.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PythonClasses.py" />
+    <Compile Include="ShoppingCart.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

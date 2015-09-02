@@ -31,7 +31,13 @@
     <Compile Include="Document.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Fibonacci.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Lambdas.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Person.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PythonClasses.py" />

@@ -18,7 +18,7 @@ def get_random_weather_report():
 
 def main():
     days  = get_days()
-    for d in days: #really the only for loop concept in python
+    for d in days: #really the only for loop construct in python
         r = get_random_weather_report()
         print("weather on {0} is {1}".format(d, r))
 

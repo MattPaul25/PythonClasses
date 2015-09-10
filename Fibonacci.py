@@ -1,6 +1,6 @@
 #Fibonacci function using a yield return
 
-def FibonacciCounter(UpTo, predicate): #returns serious of numbers so long as they match predicate
+def FibonacciCounter(UpTo, predicate): #returns series of numbers that match predicate
     current, nxt = 1, 1
     if predicate(current):
         yield current
